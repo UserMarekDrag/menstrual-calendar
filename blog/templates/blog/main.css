@@ -1,15 +1,17 @@
 body
 {
     margin: 0;
-    background-color: #d3e4ec;
-    color: rgb(241, 237, 232);
+    background-color: 	#717270;
+    color: rgb(19, 18, 18);
     font-size: 17px;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .logo
 {
-    margin-bottom: 50px;
-    float: left;
+    background-color: #e9afc6;
+    text-align: center;
 }
 
 .logo img
@@ -18,35 +20,26 @@ body
 	height: 100px;
 }
 
-.logoimg
-{
-	margin-left: 70px;
-	width: 100px;
-}
-
 #topnav
 {
-	background-color: #e9afc6;
-	text-align: left;
-    float: left;
+	background-color: #525350;
+	text-align: center;
 }
 
 .menu
 {
-	display: inline-block;
-    list-style-type: none;
-	margin-top: 20;
-	font-size: 30px;
-	min-height: 40px;
-	line-height: 100%;
-	text-align: center;
+	list-style-type: none;
+	margin: 0px;
+	font-size: 25px;
+	min-height: 38px;
+	line-height: 200%;
 }
 
 .menu > li
 {
 	display: inline-block;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .menu a
@@ -57,100 +50,220 @@ body
 
 .menu a:hover
 {
-	color: #0a2b42;
+	color: #e9afc6;
 }
 
-#photo
+.banner 
 {
-	background-color: #d3e4ec;
+    background-image: url("img/main_7.jpg");
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
 }
 
-.main_image
+.banner > p 
 {
-    margin-left: auto;
-	margin-right: auto;
-    text-align: center;
+    color: #836772;
+    padding: 10px;
 }
 
-.main_image img
+.h1-banner
 {
-	width: 1100px;
-	height: 600px;
-    opacity: 0.8;
+    font-size: 50px;
 }
 
-
+.h2-banner
+{
+    font-size: 30px;
+}
 
 h1
 {
 	font-size: 44px;
 	font-weight: 400;
-	color: #39a5f1;
+	color: #151718;
 	margin-bottom: 20px;
 }
-
 
 .entries
 {
 	margin-left: auto;
 	margin-right: auto;
-	width: 950px;
+	width: 700px;
 	text-align: center;
 	padding-top: 10px;
-	padding-bottom: 80px;
-	margin-top: 40px;
+	padding-bottom: 50px;
+	margin-top: 5px;
 }
 
 #newest
 {
-	background-color: #191d21;
+	background-color:  #717270;;
 }
 
 .entry
 {
-	background-color: #222930;
+	background-color: #e9afc6;
 	padding: 10px;
 	text-align: justify;
 	margin-top: 40px;
-	border-radius: 5px;
+	border-radius: 30px;
 }
 
 .entryimg
 {
 	display: inline-block;
-	margin-left: 30px;
-	width: 120px;
+	margin-left: 20px;
+    margin-top: 20px;
+	width: 170px;
 }
 
 .entryimg img
 {
-	width: 90px;
-	height: 90px;
+	width: 150px;
+	height: 130px;
 }
 
 .entrytxt
 {
-	display: inline-block;
-	width: 750px;
-	font-size: 15px;
+    display: inline-block;
+	width: 450px;
+	font-size: 14px;
+    
 }
 
 h2
 {
-	font-size: 20px;
+	letter-spacing: 2px;
+    font-size: 20px;
 	font-weight: 400;
-	color: #39a5f1
+	color: #151718
+}
+
+.contact-conteiner
+{
+    background-color: #525350;
+    margin-left: auto;
+    margin-right: auto;
+	text-align: center;
 }
 
 .contact
 {
+    display: inline-block;
+	padding-bottom: 60px;
+	margin-bottom: 0px;
+    color: #000;       
+}
+
+.logo-contact
+{
+    float: left;
+    width: 400px;
+    padding-top: 80px;
+}
+
+.logo-contact img
+{
+    width: 115px;
+	height: 100px;   
+}
+
+.email
+{
+    float: left;
+    width: 400px;
+    padding-top: 70px;
+}
+
+.email h5
+{
+    font-size: 15;
+    text-decoration: none;
+    padding: 15px;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.information
+{
+    float: left;
+    width: 400px;
+    padding-top: 55px;
+    margin-top: 35px;
+}
+
+.information h5
+{
+    font-size: 15;
+    text-decoration: none;
+    padding: 3px;
+    margin: 0;
+}
+
+.botton
+{
+	background-color: #717270;
+	padding: 2px;
+	color: #efefef;
+	font-size: 12px;
+	text-decoration: none;
+	border-radius: 2px;
+	min-width: 200px;
+    margin-top: 20px;
+}
+
+.botton:hover
+{
+	background-color: #e9afc6;
+}
+
+footer
+{
+    background-color: #e9afc6;
+}
+
+.socials
+{
+	text-align: center;
+	background-color: #717270;
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.socialdivs
+{
+    width: 500px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 950px;
-	text-align: center;
-	padding-bottom: 70px;
-	margin-bottom: 50px;
-    color: #000;
+}
+
+.fb
+{
+	width: 250px;
+	height: 155px;
+	float:left;
+}
+
+.fb:hover
+{
+	background-color: #4668b3;
+}
+
+.tw
+{
+	width: 250px;
+	height: 155px;
+	float:left;
+}
+
+.tw:hover
+{
+	background-color: #3095d3;
 }
 
 .info
@@ -159,10 +272,4 @@ h2
 	margin-right: auto;
 	text-align: center;
 	padding: 20px;
-    color: #ffff;
-}
-
-footer
-{
-    background-color: #222930;
 }
