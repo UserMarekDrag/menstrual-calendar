@@ -224,7 +224,7 @@ h2
 
 footer
 {
-    background-color: #e9afc6;
+    
 }
 
 .socials
@@ -268,8 +268,113 @@ footer
 
 .info
 {
-	margin-left: auto;
+	background-color: #e9afc6;
+    margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 	padding: 20px;
+}
+
+.container
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1050px;
+}
+
+.west
+{
+	float: left;
+	width: 750px;
+	padding: 20px;
+	text-align: justify;
+}
+
+.west h1
+{
+	font-size: 32px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.west img
+{
+	width: 750px;
+	height: 400px;
+}
+
+.comments
+{
+	background-color: #525350;
+	padding: 15px;
+	margin-top: auto;
+	margin-left: auto;
+	margin-top: 0;
+	
+	
+}
+
+.comments h1
+{
+	padding-top: 0;
+	margin-top: 0;
+}
+
+
+
+.comment
+{
+	background-color: #717270; 
+	padding: 10px;
+	margin-top: auto;
+	margin-left: auto;
+	
+}
+
+.comment img
+{
+	width: 50px;
+	height: 50px;
+}
+
+.img-user
+{
+	float: left;
+	padding-top: 10px;
+}
+
+.details
+{
+	float: left;
+	padding: 10px;
+	padding-top: 10px;
+
+}
+
+.east
+{
+	float: left;
+	background-color: #525350;
+	width: 220px;
+	padding: 20px;
+	margin-top: 30px;
+	margin-left: 0;
+	padding-top: 0;
+	padding-left: 20px;
+}
+
+.east h2
+{
+	font-weight: 600;
+	
+}
+
+.east ul
+{
+	padding-left: 20px;
+}
+
+.east ul > li
+{
+	margin-bottom: 5px;
 }
