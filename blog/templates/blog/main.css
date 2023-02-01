@@ -133,7 +133,6 @@ h1
     display: inline-block;
 	width: 450px;
 	font-size: 14px;
-    
 }
 
 h2
@@ -222,11 +221,6 @@ h2
 	background-color: #e9afc6;
 }
 
-footer
-{
-    
-}
-
 .socials
 {
 	text-align: center;
@@ -309,9 +303,7 @@ footer
 	padding: 15px;
 	margin-top: auto;
 	margin-left: auto;
-	margin-top: 0;
-	
-	
+	margin-top: 0;	
 }
 
 .comments h1
@@ -320,15 +312,12 @@ footer
 	margin-top: 0;
 }
 
-
-
 .comment
 {
 	background-color: #717270; 
 	padding: 10px;
 	margin-top: auto;
 	margin-left: auto;
-	
 }
 
 .comment img
@@ -348,7 +337,6 @@ footer
 	float: left;
 	padding: 10px;
 	padding-top: 10px;
-
 }
 
 .east
@@ -366,7 +354,6 @@ footer
 .east h2
 {
 	font-weight: 600;
-	
 }
 
 .east ul
@@ -377,4 +364,113 @@ footer
 .east ul > li
 {
 	margin-bottom: 5px;
+}
+
+.container-forum
+{
+	background-color: #717270;
+	margin-left: auto;
+	margin-right: auto;
+	width: 850px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.forum
+{
+	width: 850px;
+	padding: 20px;
+}
+
+.new-forum-post
+{
+	margin-top: 20px;
+	float: left;
+	width: 200px;
+	text-align: left;
+}
+
+.botton-new-post
+{
+	background-color: #525350;
+	padding: 10px;
+	color: #efefef;
+	font-size: 20px;
+	text-decoration: none;
+	border-radius: 20px;
+	min-width: 200px;
+    margin-top: 20px;
+}
+
+.botton-new-post:hover
+{
+	background-color: #5d5e5b;
+}
+
+.search-forum
+{
+	float: left;
+	margin-top: 20px;
+	width: 650px;
+	text-align: right;
+}
+
+.botton-search
+{
+	background-color: #525350;
+	padding: 2px;
+	color: #efefef;
+	font-size: 12px;
+	text-decoration: none;
+	border-radius: 0px;
+	min-width: 200px;
+    margin-top: 20px;
+}
+
+.botton-search:hover
+{
+	background-color: #5d5e5b;
+}
+
+.details-forum
+{
+	background-color: #e9afc6;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-align: center;
+	margin-top: 50px;
+	border-radius: 30px;
+	margin-bottom: 15px;
+}
+
+.details-forum h2
+{
+	letter-spacing: 6px;
+}
+
+.post-forum
+{
+	background-color: #e9afc6;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: justify;
+	margin-bottom: 15px;
+	border-radius: 30px;
+}
+
+.post-forum-txt
+{
+    width: 800px;
+	font-size: 14px;
+}
+
+h2
+{
+	letter-spacing: 2px;
+    font-size: 20px;
+	font-weight: 400;
+	color: #151718
 }
