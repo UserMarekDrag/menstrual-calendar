@@ -300,8 +300,8 @@ h2
 .comments
 {
 	background-color: #525350;
-	padding: 15px;
-	margin-top: auto;
+	padding: 20px;
+	margin-right: auto;
 	margin-left: auto;
 	margin-top: 0;	
 }
@@ -316,8 +316,11 @@ h2
 {
 	background-color: #717270; 
 	padding: 10px;
-	margin-top: auto;
+	margin-right: auto;
 	margin-left: auto;
+	margin-bottom: 15px;
+	margin-top: 0;
+	
 }
 
 .comment img
@@ -337,6 +340,12 @@ h2
 	float: left;
 	padding: 10px;
 	padding-top: 10px;
+	border-radius: #e9afc6;
+}
+
+.detail-border
+{
+	color: #e9afc6;
 }
 
 .east
@@ -451,7 +460,7 @@ h2
 
 .post-forum
 {
-	background-color: #e9afc6;
+	background-color: #ececec;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-top: 10px;
@@ -473,4 +482,48 @@ h2
     font-size: 20px;
 	font-weight: 400;
 	color: #151718
+}
+
+.one-post-forum
+{
+	background-color: #ececec;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: justify;
+	margin-bottom: 15px;
+	/* border-radius: 30px; */
+	margin-top: 10px;
+}
+
+.one-post-forum-txt
+{
+    width: 700px;
+	font-size: 14px;
+}
+
+.comm-forum
+{
+	margin-top: 20px;
+	width: 750px;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.botton-comm
+{
+	background-color: #717270;
+	padding: 2px;
+	color: #efefef;
+	font-size: 12px;
+	text-decoration: none;
+	border-radius: 0px;
+	min-width: 200px;
+    margin-top: 20px;
+}
+
+.botton-comm:hover
+{
+	background-color: #5d5e5b;
 }
