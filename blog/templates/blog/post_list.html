@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pl">
 <html>
     <head>
@@ -8,8 +9,8 @@
 
         <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
         
-        <link rel="stylesheet" href="main.css">  
-	    <link rel="stylesheet" href="css/fontello.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/css/fontello.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
 	
@@ -20,16 +21,16 @@
             <div class="logo">
                         
                 <div class="logoimg">
-                        
-                        <a href="#"><img src="img/logo_sqer.png"></a>
-                                        
+
+                    <a href="#"><img src="{% static 'img/logo_sqer.png' %}"></a>
+
                 </div>
             </div>
 
             <nav id="topnav">
             
                 <ul class="menu">
-                        <li><a href="index.html">Calendar</a></li>
+                        <li><a href="#">Calendar</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Forum</a></li>
                         <li><a href="#">About me</a></li>
@@ -41,7 +42,8 @@
             <article>
                 <section>
 
-                    <div class="banner">
+                    <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+
                         <p class="h1-banner">Open Your Mind to Freedom</p>
                         <p class="h2-banner">We have all you need in one place!</p>
                     </div>
@@ -49,54 +51,29 @@
                 </section>
                 <section id="newest">
                     
-                    <div class="entries"> 
-                    
+                    <div class="entries">
+
                             <header>
 
-                                <h1>Najnowsze wpisy</h1>
-                                <p>Poniżej znajdziesz trzy ostatnio opublikowane artkuły - dzięki temu łatwo można 
-                                sprawdzić, czy na blogu pojawiło się coś nowego.</p>
-                            
+                                <h1>Latest posts</h1>
+                                <p>You will find recently published articles below.</p>
+
                             </header>
-                        
-                        <div class="entry">
-                            
-                                <div class="entryimg">
-                                    <img src="img/zdj_1.jpg" alt="Anthony de Mello">
-                                </div>
+                            {% for post in posts %}
+                                <div class="entry">
 
-                                <div class="entrytxt">
-                                    <h2>Poszukiwanie akceptacji</h2>
-                                    <p>Ktoś kiedyś pięknie to ujął: życie to coś, co przydarza się nam podczas gdy jesteśmy zajęci układaniem planów. Jesteśmy zajęci imponowaniem wszystkim wokół, dbaniem o to, by na pewno zostać dobrze odebranym. Porozmawiajmy o nałogu poszukiwania akceptacji!</p>
-                                </div>
-                            
-                            </div>
-        
-                            <div class="entry">
-                            
-                                <div class="entryimg">
-                                    <img src="img/zdj_2.jpg" alt="Fryderyk Nietzsche">
-                                </div>
+                                    <div class="entryimg">
+                                        <img src="media/{{post.summary_image}}">
+                                    </div>
 
-                                <div class="entrytxt">
-                                    <h2>Zgładzić smoka</h2>
-                                    <p>Wielbłąd to zwierzę, na które ludzie nakładają wiele brzemion, w tym ciężar braku własnej autonomii. Wielbłąd (jak to wielbłąd) udaje się z całym tym ciężarem na pustynię. Czym jest na pustynia? To miejsce gdzie jesteś sam, gdzie nie słychać tych wszystkich słów "powinieneś".</p>
-                                </div>
-                            
-                            </div>
-        
-                            <div class="entry">
-                            
-                                <div class="entryimg">
-                                    <img src="img/zdj_3.jpg" alt="Alan Watts">
-                                </div>
+                                    <div class="entrytxt">
+                                        <h2>{{ post.title }}</h2>
+                                        <p>{{ post.summary_text|linebreaksbr }}</p>
+                                    </div>
 
-                                <div class="entrytxt">
-                                    <h2>Potrzeba kontroli</h2>
-                                    <p>Zastanawiam się, co byś zrobił, gdybyś miał moc śnić w nocy jakikolwiek wybrany przez siebie sen. I oczywiście miałbyś moc wpływania na swoje odczuwanie czasu we śnie. Mógłbyś przeżyć naprzykład 75 lat subiektywnego czasu w ramach ośmiogodzinnego snu.</p>
-                                </div>	
+                                </div>
+                            {% endfor %}
 
-                            </div>
                         </div>
                     </div>
                 
@@ -114,7 +91,7 @@
 
                     <div class="logo-contact">
 
-                        <img src="img/logo_sqer.png">
+                        <img src="{% static 'img/logo_sqer.png' %}">
 
                     </div>
 
@@ -155,7 +132,7 @@
             </div>
 
             <div class="info">
-                Wszelkie prawa zastrzeżone &copy; 2023 Dziękuję za wizytę!
+                All rights reserved &copy; 2023
             </div>
         
         </footer>

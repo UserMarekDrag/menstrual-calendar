@@ -55,7 +55,6 @@ body
 
 .banner 
 {
-    background-image: url("img/main_7.jpg");
     background-size: cover;
     height: 600px;
     width: 100%;
@@ -133,17 +132,6 @@ h1
     display: inline-block;
 	width: 450px;
 	font-size: 14px;
-}
-
-.entrytxt-header
-{
-	height: 30px;
-
-}
-
-.entrytxt-article
-{
-	height: 100px;
 }
 
 h2
@@ -642,5 +630,6 @@ input[type=checkbox]
 {
 	padding: 15px 10px;
 	margin: 10px;
+	
 	letter-spacing: 5px;
 }
