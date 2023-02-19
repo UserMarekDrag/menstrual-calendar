@@ -1,141 +1,48 @@
-<!DOCTYPE html>
+{% extends 'blog/base.html' %}
 {% load static %}
-<html lang="pl">
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Calendar blog</title>
-        <meta name="author" content="Marek Drąg">
+{% block content %}
+    <main>
+        <article>
+            <section>
 
-        <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
-        
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-        <link rel="stylesheet" href="{% static 'css/css/fontello.css' %}">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
-	    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
-	
+                <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
 
-    </head>
-    <body>
-        <header>
-            <div class="logo">
-                        
-                <div class="logoimg">
-
-                    <a href="#"><img src="{% static 'img/logo_sqer.png' %}"></a>
-
+                    <p class="h1-banner">Open Your Mind to Freedom</p>
+                    <p class="h2-banner">We have all you need in one place!</p>
                 </div>
-            </div>
 
-            <nav id="topnav">
+            </section>
+            <section id="newest">
+
+                <div class="entries">
+
+                        <header>
+                                                        
+                            <h1>Latest posts</h1>
+                            <p>You will find recently published articles below.</p>
+
+                        </header>
+                        {% for post in posts %}
             
-                <ul class="menu">
-                        <li><a href="#">Calendar</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="#">About me</a></li>
-                        <li><a href="#">Login</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <article>
-                <section>
+                        <span style="cursor:pointer">
+                            <div class="entry" onclick="location.href='{% url 'post_detail' pk=post.pk %}';">
 
-                    <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
-
-                        <p class="h1-banner">Open Your Mind to Freedom</p>
-                        <p class="h2-banner">We have all you need in one place!</p>
-                    </div>
-
-                </section>
-                <section id="newest">
-                    
-                    <div class="entries">
-
-                            <header>
-
-                                <h1>Latest posts</h1>
-                                <p>You will find recently published articles below.</p>
-
-                            </header>
-                            {% for post in posts %}
-                                <div class="entry">
-
-                                    <div class="entryimg">
-                                        <img src="media/{{post.summary_image}}">
-                                    </div>
-
-                                    <div class="entrytxt">
-                                        <h2>{{ post.title }}</h2>
-                                        <p>{{ post.summary_text|linebreaksbr }}</p>
-                                    </div>
-
+                                <div class="entryimg">
+                                    <img src="media/{{post.summary_image}}">
                                 </div>
-                            {% endfor %}
 
-                        </div>
-                    </div>
-                
-                </section>
-            </article>
-        </main>
-        
-        <footer>
+                                <div class="entrytxt">
+                                    <h2>{{ post.title }}</h2>
+                                    <p>{{ post.summary_text|linebreaksbr }}</p>
+                                </div>
 
-            <div class="contact-conteiner">
+                            </div>
+                        </span>
+                        {% endfor %}
 
-                <div class="contact">
-
-                    
-
-                    <div class="logo-contact">
-
-                        <img src="{% static 'img/logo_sqer.png' %}">
-
-                    </div>
-
-                    <div class="email">
-
-                        <h5>Subscribe to the newsletter to stay up to date</h5>
-                        <input type="email" name="email" placeholder="Email">
-                        <a href="#" class="botton">Subscribe</a>                            
-
-                    </div>
-
-                    <div class="information">
-
-                        <h5>Calendar Blog by Marek Drag</h5>
-                        <h5>Mail: marekdrag@gmail.com</h5>
-                        <h5>Phone number: 508-842-837</h5>
-
-                    </div>
-
-                    <div style="clear:both"></div>
                 </div>
-            </div>
-                   
-            <div class="socials">
 
-                <div class="socialdivs">
-
-                    <div class="fb">
-                        <i class="icon-facebook"></i>
-                    </div>
-
-                    <div class="tw">
-                        <i class="icon-twitter"></i>
-                    </div>
-                    
-                    <div style="clear:both"></div>
-                </div>
-            </div>
-
-            <div class="info">
-                All rights reserved &copy; 2023
-            </div>
-        
-        </footer>
-        
-    </body>
-</html>
+            </section>
+        </article>
+    </main>
+{% endblock %}

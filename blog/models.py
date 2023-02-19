@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
@@ -9,9 +10,7 @@ class Post(models.Model):
     category = models.CharField(max_length=50)
     summary_text = models.CharField(max_length=300)
     summary_image = models.ImageField(upload_to='', default=None)
-    text_image_1 = models.ImageField(upload_to='', default=None)
-    text_image_2 = models.ImageField(upload_to='', default=None)
-    text = models.TextField()
+    body = RichTextField(blank=True, null=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
