@@ -21,43 +21,55 @@
 
                             <header>
 
-                                <h1>Komentarze</h1>
+                                <h1>Comments</h1>
 
                                 <p>Zachęcam do dyskusji w komentarzach, jednocześnie proszę o zachowanie kultury wypowiedzi.</p>
 
                             </header>
 
-                            <div class="comment">
+                            {% for comment in post.comments.all %}
+                                {% if comment.approved_comment %}
+                                    <div class="comment">
 
-                                <article>
-                                    <header>
+                                        <article>
+                                            <header>
 
-                                        <div class="img-user">
-                                            <img src="{% static 'img/user.jpg' %}">
-                                        </div>
+                                                <div class="img-user">
+                                                    <img src="{% static 'img/user.jpg' %}">
+                                                </div>
 
-                                        <div class="details">
-                                            <p>Użytkownik 2 | 30.01.2023 | 18:10:25</p>
-                                        </div>
+                                                <div class="details">
 
-                                        <div style="clear: both;"></div>
+                                                    <p>{{ comment.author }} | {{ comment.created_date }}</p>
 
-                                    </header>
+                                                </div>
 
-                                    <hr class="detail-border">
-                                    <p>Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed condimentum vehicula pulvinar. Vivamus a tristique urna. Mauris ac semper nisi. Sed convallis tincidunt enim, non efficitur ante scelerisque vel. Aenean ullamcorper nisi lectus, sed maximus lacus mollis in. Fusce at nisl quis lectus egestas imperdiet vel id nisi. Sed scelerisque sollicitudin nibh, ac iaculis dolor pulvinar nec. Phasellus cursus eleifend eros venenatis egestas. Pellentesque sed arcu vitae erat vestibulum pharetra.</p>
+                                                <div style="clear: both;"></div>
 
-                                </article>
-                            </div>
+                                            </header>
+
+                                            <hr class="detail-border">
+                                            <p>{{ comment.text|safe }}</p>
+
+                                        </article>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
 
                             <div class="comm-forum">
 
-                                <a href="#" class="botton-comm">Dodaj komentarz</a>
+                                <h1>New comment</h1>
 
-                                <div>
-                                    <input type="txt" name="txt">
-                                </div>
+                                <form method="POST">
+                                    {% csrf_token %}
 
+                                    <div  class="form-group">
+                                        {{ form.as_p }}
+                                    </div>
+
+                                    <button type="submit">Send comment</button>
+
+                                </form>
                             </div>
 
                         </section>
