@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <main>
+        <article>
+            <section>
+
+                <div class="banner-reg" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+
+                    <div class="container-register">
+
+                        <header>
+
+                            <h1>REGISTER</h1>
+
+                        </header>
+
+                        <form method="post">
+
+                            {% csrf_token %}
+                            {{ register_form|crispy }}
+
+                            <div>
+                            <label><input type="checkbox" name="statute"> Akceptuję regulamin</label>
+                            </div>
+
+                            <input type="submit" value="Sign up">
+
+                        </form>
+
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+{% endblock %}
