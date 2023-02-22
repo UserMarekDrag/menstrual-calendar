@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+{% extends 'users/base.html' %}
 {% load static %}
 {% block content %}
     <main>
@@ -15,16 +15,18 @@
 
                         </header>
 
-                        <form method="post" action="">
+                        <form method="post" action="{% url 'login' %}">
 
                             {% csrf_token %}
+                            {{ form.as_p }}
 
-                            <input type="text" name="login" placeholder="Login">
-                            <input type="password" name="password" placeholder="Password">
-
-                            <input type="submit" value="Login">
+                            <input type="hidden" name="next" value="{{ next }}" />
+                            <p><input type="submit" value="Login"></p>
 
                         </form>
+
+                        <p>Don't have an account yet?</p>
+                        <p> <a href="{% url 'register' %}">Register now</a>.</p>
 
                     </div>
                 </div>

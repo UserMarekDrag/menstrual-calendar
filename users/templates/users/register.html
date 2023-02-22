@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+{% extends 'users/base.html' %}
 {% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
@@ -22,7 +22,7 @@
                             {{ register_form|crispy }}
 
                             <div>
-                            <label><input type="checkbox" name="statute"> Akceptuję regulamin</label>
+                                <p>By registering in you accept the Terms of Use and acknowledge the Privacy Policy and Cookie Policy.</p>
                             </div>
 
                             <input type="submit" value="Sign up">

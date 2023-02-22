@@ -19,3 +19,8 @@ class NewUserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)

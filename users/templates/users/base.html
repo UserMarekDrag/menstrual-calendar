@@ -34,9 +34,15 @@
                         <li><a href="{% url 'post_list' %}">Blog</a></li>
                         <li><a href="#">Forum</a></li>
                         <li><a href="#">About me</a></li>
-                        <li><a href="{% url 'login' %}">Login</a></li>
-                        <li><a href="{% url 'register' %}">Register</a></li>
+
+                        {% if not request.user.is_authenticated %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                        {% else %}
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% endif %}
                 </ul>
+
             </nav>
         </header>
             {% block content %}
