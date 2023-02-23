@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
-from .forms import NewUserForm, LoginForm
+from django.shortcuts import render
 from django.contrib.auth import login, authenticate
-from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from .forms import LoginForm, UserRegistrationForm
 
 
 @login_required
@@ -11,20 +10,22 @@ def dashboard(request):
     return render(request, 'users/dashboard.html', {'section': 'dashboard'})
 
 
-def register_request(request):
-    if request.method == "POST":
-        form = NewUserForm(request.POST)
+def register(request):
 
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, "Registration successful.")
-            return redirect("user/")
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
 
-        messages.error(request, "Unsuccessful registration. Invalid information.")
-    form = NewUserForm()
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_user.set_password(
+                user_form.cleaned_data['password'])
+            new_user.save()
+            return render(request, 'users/register_done.html', {'new_user': new_user})
 
-    return render(request, 'users/register.html', {"register_form": form})
+    else:
+        user_form = UserRegistrationForm()
+
+    return render(request, 'users/register.html', {'user_form': user_form})
 
 
 def user_login(request):
@@ -49,4 +50,4 @@ def user_login(request):
     else:
         form = LoginForm()
 
-    return render(request, 'user/login.html', {'form_login': form})
+    return render(request, 'users/login.html', {'form_login': form})

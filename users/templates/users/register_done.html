@@ -1,0 +1,29 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <article>
+            <section>
+
+                <div class="banner-reg" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+
+                    <div class="container-register">
+
+                        <header>
+
+                            <h1>Hello, {{ new_user.first_name }}!</h1>
+
+                        </header>
+
+                        <p>
+                            TYour account has been created.
+
+                            <a href="{% url 'login' %}">Register now</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+{% endblock %}

@@ -1,7 +1,6 @@
 {% extends 'users/base.html' %}
 {% load static %}
 {% block content %}
-{% load crispy_forms_tags %}
     <main>
         <article>
             <section>
@@ -16,10 +15,10 @@
 
                         </header>
 
-                        <form method="post">
+                        <form method="post" action=".">
 
+                            {{ user_form.as_p }}
                             {% csrf_token %}
-                            {{ register_form|crispy }}
 
                             <div>
                                 <p>By registering in you accept the Terms of Use and acknowledge the Privacy Policy and Cookie Policy.</p>
