@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <div class="container-register">
+        <header>
+
+            <h1>Account editing</h1>
+
+        </header>
+
+        <p>
+            Your account editing has been successful.
+            <a href="{% url 'dashboard' %}">Back to your panel</a>.
+        </p>
+
+    </div>
+{% endblock %}
