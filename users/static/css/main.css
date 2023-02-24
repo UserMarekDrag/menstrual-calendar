@@ -509,7 +509,7 @@ h2
 	margin-bottom: 20px;
 }
 
-.botton-comm
+.button-comm
 {
 	background-color: #717270;
 	padding: 2px;
@@ -521,7 +521,7 @@ h2
     margin-top: 20px;
 }
 
-.botton-comm:hover
+.button-comm:hover
 {
 	background-color: #5d5e5b;
 }
@@ -603,27 +603,32 @@ input[type=submit]:hover
 
 .container-register
 {
-	width: 400px;
+	width: 600px;
 	padding: 20px 50px;
-	margin-left: auto;
-	margin-right: auto;
+	/* margin-left: auto;
+	margin-right: auto; */
 	margin-top: 0px;
 	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	box-shadow: 3px 3px 30px 5px rgba(255, 254, 254, 0.9);
-	text-align: center;
+	/* text-align: center; */
 }
 
 .banner-reg
 {
     background-image: url("img/main_7.jpg");
     background-size: cover;
-    height: 800px;
+    height: 900px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;   
+}
+
+.banner-reg h1
+{
+	text-align: center;
 }
 
 input[type=checkbox]

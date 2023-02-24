@@ -1,36 +1,25 @@
 {% extends 'users/base.html' %}
 {% load static %}
 {% block content %}
-    <main>
-        <article>
-            <section>
+{% load crispy_forms_tags %}
+    <div class="container-register">
+        <header>
 
-                <div class="banner-reg" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+            <h1>REGISTER</h1>
 
-                    <div class="container-register">
+        </header>
 
-                        <header>
+        <form method="post" action=".">
 
-                            <h1>REGISTER</h1>
+            {{ user_form|crispy }}
+            {% csrf_token %}
 
-                        </header>
+            <div>
+                <p>By registering in you accept the Terms of Use and acknowledge the Privacy Policy and Cookie Policy.</p>
+            </div>
 
-                        <form method="post" action=".">
+            <div style="text-align: center;"><input type="submit" value="Sign up"></div>
 
-                            {{ user_form.as_p }}
-                            {% csrf_token %}
-
-                            <div>
-                                <p>By registering in you accept the Terms of Use and acknowledge the Privacy Policy and Cookie Policy.</p>
-                            </div>
-
-                            <input type="submit" value="Sign up">
-
-                        </form>
-
-                    </div>
-                </div>
-            </section>
-        </article>
-    </main>
+        </form>
+    </div>
 {% endblock %}

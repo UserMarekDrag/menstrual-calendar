@@ -1,38 +1,26 @@
 {% extends 'users/base.html' %}
 {% load static %}
 {% block content %}
-    <main>
-        <article>
-            <section>
+    <div class="container-log">
+        <header>
 
-                <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+            <h1>LOGIN</h1>
 
-                    <div class="container-log">
+        </header>
 
-                        <header>
+        <form method="post" action="{% url 'login' %}">
 
-                            <h1>LOGIN</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
 
-                        </header>
+            <input type="hidden" name="next" value="{{ next }}" />
+            <p><input type="submit" value="Login"></p>
 
-                        <form method="post" action="{% url 'login' %}">
+        </form>
 
-                            {% csrf_token %}
-                            {{ form.as_p }}
+        <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
 
-                            <input type="hidden" name="next" value="{{ next }}" />
-                            <p><input type="submit" value="Login"></p>
-
-                        </form>
-
-                        <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
-
-                        <p>Don't have an account yet?</p>
-                        <p> <a href="{% url 'register' %}">Register now</a>.</p>
-
-                    </div>
-                </div>
-            </section>
-        </article>
-    </main>
+        <p>Don't have an account yet?</p>
+        <p> <a href="{% url 'register' %}">Register now</a>.</p>
+    </div>
 {% endblock %}

@@ -1,24 +1,12 @@
 {% extends 'users/base.html' %}
 {% load static %}
 {% block content %}
-    <main>
-        <article>
-            <section>
+    <div class="container-log">
+        <header>
 
-                <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+            <h1>LOGOUT</h1>
+            <p>You have been successfully logged out. <a href="{% url 'login' %}">Log in now</a>.</p>
 
-                    <div class="container-log">
-
-                        <header>
-
-                            <h1>LOGOUT</h1>
-                            <p>You have been successfully logged out.<a href="{% url 'login' %}">Log in now</a>.</p>
-
-                        </header>
-
-                    </div>
-                </div>
-            </section>
-        </article>
-    </main>
+        </header>
+    </div>
 {% endblock %}

@@ -1,23 +1,11 @@
 {% extends 'users/base.html' %}
 {% load static %}
 {% block content %}
-    <main>
-        <article>
-            <section>
+    <div class="container-log">
+        <header>
 
-                <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+            <h1>Hello, {{ user.username.capitalize}}!</h1>
 
-                    <div class="container-register">
-
-                        <header>
-
-                            <h1>Hello, {{ user.username.capitalize}}!</h1>
-
-                        </header>
-
-                    </div>
-                </div>
-            </section>
-        </article>
-    </main>
+        </header>
+    </div>
 {% endblock %}
