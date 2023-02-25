@@ -24,7 +24,6 @@ def register(request):
             profile = Profile.objects.create(user=new_user)
             return render(request, 'users/register_done.html',
                           {'new_user': new_user},
-                          {'profile': profile},
                           )
 
     else:
