@@ -27,29 +27,35 @@
                 <article>
 
                     <section>
-                        {% for post in forum_posts %}
+
+                        {% for forum_category in forum_categories %}
                             <header>
 
                                 <div class="details-forum">
-                                    <h2>{{ post.category }}</h2>
+                                    <h2>{{ forum_category.category }}</h2>
                                 </div>
 
                             </header>
+                            {% for forum_post in forum_posts %}
+                                {% if  forum_post.category == forum_category.category %}
 
+                                    <span style="cursor:pointer">
+                                        <div class="post-forum" onclick="location.href='{% url 'forum_post_detail' pk=forum_post.pk %}';">
 
+                                            <div class="details-forum-post">
+                                                <p>{{ forum_post.author }} | {{ forum_post.published_date }}</p>
+                                            </div>
 
-                            <div class="post-forum">
+                                            <div class="post-forum-txt">
+                                                <h2>{{ forum_post.title }}</h2>
+                                                <p>{{ forum_post.body|safe }}</p>
+                                            </div>
 
-                                <div class="details-forum-post">
-                                    <p>{{ post.author }} | {{ post.published_date }}</p>
-                                </div>
+                                        </div>
+                                    </span>
 
-                                <div class="post-forum-txt">
-                                    <h2>{{ post.title }}</h2>
-                                    <p>{{ post.body|safe }}</p>
-                                </div>
-
-                            </div>
+                                {% endif %}
+                            {% endfor %}
                         {% endfor %}
 
                     </section>

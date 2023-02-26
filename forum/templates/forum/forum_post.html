@@ -1,0 +1,118 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <div class="container">
+        <div class="west">
+            <main>
+                <article>
+
+                    <div class="one-post-forum">
+
+                        <header>
+                            <div class="details-forum-post">
+                                <p>{{ post.author }} | {{ post.published_date }}</p>
+                            </div>
+                        </header>
+
+                        <div class="one-post-forum-txt">
+
+                            <h2>{{ post.title }}</h2>
+                            <p>{{ post.body|safe }}</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="comments">
+
+                        <section>
+
+                            <header>
+
+                                <h1>Answers</h1>
+
+                            </header>
+
+                            {% for comment in post.forum_comments.all %}
+                                {% if comment.approved_comment %}
+                                    <div class="comment">
+
+                                        <article>
+                                            <header>
+
+                                                <div class="img-user">
+                                                    <img src="{% static 'img/user.jpg' %}">
+                                                </div>
+
+                                                <div class="details">
+                                                    <p>{{ comment.author }} | {{ comment.created_date }}</p>
+                                                </div>
+
+                                                <div style="clear: both;"></div>
+
+                                            </header>
+
+                                            <hr class="detail-border">
+                                            <p>{{ comment.body|safe }}</p>
+
+                                        </article>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+
+                            <div class="comm-forum">
+
+                                <h1>New comment</h1>
+
+                                <form method="POST">
+
+                                    <div  class="form-group">
+
+                                        {% csrf_token %}
+                                        {{ comment_form.as_p }}
+
+                                    </div>
+
+                                    <button type="submit">Send comment</button>
+
+                                </form>
+                            </div>
+
+                        </section>
+                    </div>
+                </article>
+            </main>
+        </div>
+        <div class="east">
+            <aside>
+
+                <nav>
+
+                    <h2>Kategorie</h2>
+
+                    <ul>
+                        <li>Miłość</li>
+                        <li>Wolność</li>
+                        <li>Uroda</li>
+                        <li>Zdrowie</li>
+                        <li>Rodzina</li>
+                        <li>Styl życia</li>
+                    </ul>
+
+                    <h2>Powiązane wpisy</h2>
+
+                    <ul>
+                        <li>Poszukiwanie akceptacji</li>
+                        <li>Zgładzić smoka</li>
+                        <li>Potrzeba kontroli</li>
+                    </ul>
+
+                </nav>
+
+            </aside>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+    </div>
+{% endblock %}

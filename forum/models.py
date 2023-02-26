@@ -20,3 +20,14 @@ class ForumPost(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ForumCommentPost(models.Model):
+    post = models.ForeignKey('forum.ForumPost', on_delete=models.CASCADE, related_name='forum_comments')
+    author = models.CharField(max_length=200)
+    body = RichTextField(blank=True, null=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    approved_comment = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.body
