@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'crispy_forms',
     'crispy_bootstrap5',
+    'forum',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

@@ -1,0 +1,60 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-forum">
+        <div class="forum">
+            <main>
+
+                <header>
+
+                     <div class="new-forum-post">
+
+                        <a href="#" class="botton-new-post">Nowy temat +</a>
+
+                    </div>
+
+                    <div class="search-forum">
+
+                        <input type="search" name="search" placeholder="Szukaj na forum...">
+                        <a href="#" class="botton-search">Szukaj</a>
+
+                    </div>
+
+                    <div style="clear: both;"></div>
+
+                </header>
+
+                <article>
+
+                    <section>
+                        {% for post in forum_posts %}
+                            <header>
+
+                                <div class="details-forum">
+                                    <h2>{{ post.category }}</h2>
+                                </div>
+
+                            </header>
+
+
+
+                            <div class="post-forum">
+
+                                <div class="details-forum-post">
+                                    <p>{{ post.author }} | {{ post.published_date }}</p>
+                                </div>
+
+                                <div class="post-forum-txt">
+                                    <h2>{{ post.title }}</h2>
+                                    <p>{{ post.body|safe }}</p>
+                                </div>
+
+                            </div>
+                        {% endfor %}
+
+                    </section>
+                </article>
+            </main>
+        </div>
+    </div>
+{% endblock %}
