@@ -89,24 +89,29 @@
 
                 <nav>
 
-                    <h2>Kategorie</h2>
+                    <h2>Categories</h2>
 
-                    <ul>
-                        <li>Miłość</li>
-                        <li>Wolność</li>
-                        <li>Uroda</li>
-                        <li>Zdrowie</li>
-                        <li>Rodzina</li>
-                        <li>Styl życia</li>
-                    </ul>
+                    {% for category in categories %}
+                    <span style="cursor:pointer">
+                        <div onclick="location.href='{% url 'forum_category_detail' name=category.name %}';">
+                                <ul>
+                                    <li>{{ category.name }}</li>
+                                </ul>
+                        </div>
+                    </span>
+                    {% endfor %}
 
-                    <h2>Powiązane wpisy</h2>
+                    <h2>Latest posts</h2>
 
-                    <ul>
-                        <li>Poszukiwanie akceptacji</li>
-                        <li>Zgładzić smoka</li>
-                        <li>Potrzeba kontroli</li>
-                    </ul>
+                    {% for post in last_posts %}
+                        <span style="cursor:pointer">
+                            <div onclick="location.href='{% url 'forum_post_detail' pk=post.pk %}';">
+                                <ul>
+                                    <li>{{ post.title }}</li>
+                                </ul>
+                            </div>
+                        </span>
+                    {% endfor %}
 
                 </nav>
 

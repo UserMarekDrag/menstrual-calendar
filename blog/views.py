@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post
+from .models import Post, Category
 from .forms import CommentForm
 
 
@@ -11,6 +11,8 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    last_posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')[:6]
+    categories = Category.objects.all()
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -23,4 +25,16 @@ def post_detail(request, pk):
         form = CommentForm()
     return render(request, 'blog/post.html', {'post': post,
                                               'form': form,
+                                              'last_posts': last_posts,
+                                              'categories': categories,
                                               })
+
+
+def category_detail(request, name):
+    category_name = str(name)
+    categories = Category.objects.filter(name=category_name).values()
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+
+    return render(request, 'blog/category_posts.html', {'categories': categories,
+                                                        'posts': posts,
+                                                        })

@@ -1,39 +1,18 @@
-{% extends 'forum/base.html' %}
+{% extends 'blog/base.html' %}
 {% load static %}
 {% block content %}
     <div class="container-forum">
         <div class="forum">
             <main>
 
-                <header>
-
-                     <div class="new-forum-post">
-
-                        <a href="#" class="botton-new-post">Nowy temat +</a>
-
-                    </div>
-
-                    <div class="search-forum">
-
-                        <input type="search" name="search" placeholder="Szukaj na forum...">
-                        <a href="#" class="botton-search">Szukaj</a>
-
-                    </div>
-
-                    <div style="clear: both;"></div>
-
-                </header>
-
                 <article>
-
                     <section>
 
                         {% for category in categories %}
-
                             <header>
                                 <span style="cursor:pointer">
 
-                                    <div class="details-forum" onclick="location.href='{% url 'forum_category_detail' name=category.name %}';">
+                                    <div class="details-forum" onclick="location.href='{% url 'category_detail' name=category.name %}';">
                                         <h2>{{ category.name }}</h2>
                                     </div>
 
@@ -41,10 +20,10 @@
                             </header>
 
                             {% for post in posts %}
-                                {% if category.id == post.category_id %}
+                                {% if post.category_id == category.id %}
 
                                     <span style="cursor:pointer">
-                                        <div class="post-forum" onclick="location.href='{% url 'forum_post_detail' pk=post.pk %}';">
+                                        <div class="post-forum" onclick="location.href='{% url 'post_detail' pk=post.pk %}';">
 
                                             <div class="details-forum-post">
                                                 <p>{{ post.author }} | {{ post.published_date }}</p>
@@ -52,11 +31,12 @@
 
                                             <div class="post-forum-txt">
                                                 <h2>{{ post.title }}</h2>
-                                                <p>{{ post.body|safe }}</p>
+                                                <p>{{ post.summary_text|safe }}</p>
                                             </div>
 
                                         </div>
                                     </span>
+
 
                                 {% endif %}
                             {% endfor %}

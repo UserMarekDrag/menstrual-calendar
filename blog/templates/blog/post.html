@@ -82,41 +82,32 @@
 
                 <nav>
 
-                    <h2>Kategorie</h2>
+                    <h2>Categories</h2>
 
-                    <ul>
-                        <li>Miłość</li>
-                        <li>Wolność</li>
-                        <li>Uroda</li>
-                        <li>Zdrowie</li>
-                        <li>Rodzina</li>
-                        <li>Styl życia</li>
-                    </ul>
+                    {% for category in categories %}
+                        <span style="cursor:pointer">
 
-                    <h2>Powiązane wpisy</h2>
+                            <div onclick="location.href='{% url 'category_detail' name=category.name %}';">
+                                <ul>
+                                    <li>{{ category.name }}</li>
+                                </ul>
+                            </div>
 
-                    <ul>
-                        <li>Poszukiwanie akceptacji</li>
-                        <li>Zgładzić smoka</li>
-                        <li>Potrzeba kontroli</li>
-                    </ul>
+                        </span>
+                    {% endfor %}
 
-                    <h2>Archiwum bloga</h2>
+                    <h2>Latest posts</h2>
 
-                    <ul>
-                        <li>Styczeń (8)</li>
-                        <li>Luty (6)</li>
-                        <li>Marzec (7)</li>
-                        <li>Kwiecień (9)</li>
-                        <li>Maj (9)</li>
-                        <li>Czerwiec (10)</li>
-                        <li>Lipiec (11)</li>
-                        <li>Sierpień (9)</li>
-                        <li>Wrzesień (8)</li>
-                        <li>Październik (9)</li>
-                        <li>Listopad (6)</li>
-                        <li>Grudzień (10)</li>
-                    </ul>
+                    {% for post in last_posts %}
+                        <span style="cursor:pointer">
+                            <div onclick="location.href='{% url 'post_detail' pk=post.pk %}';">
+                                <ul>
+                                    <li>{{ post.title }}</li>
+                                </ul>
+                            </div>
+                        </span>
+                    {% endfor %}
+
                 </nav>
 
             </aside>

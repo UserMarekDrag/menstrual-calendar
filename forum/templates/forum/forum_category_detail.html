@@ -23,9 +23,7 @@
                     <div style="clear: both;"></div>
 
                 </header>
-
                 <article>
-
                     <section>
 
                         {% for category in categories %}
@@ -41,7 +39,7 @@
                             </header>
 
                             {% for post in posts %}
-                                {% if category.id == post.category_id %}
+                                {% if post.category_id == category.id %}
 
                                     <span style="cursor:pointer">
                                         <div class="post-forum" onclick="location.href='{% url 'forum_post_detail' pk=post.pk %}';">

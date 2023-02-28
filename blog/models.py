@@ -4,10 +4,17 @@ from django.utils import timezone
 from ckeditor.fields import RichTextField
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    category = models.CharField(max_length=50)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default=True, null=False)
     summary_text = models.CharField(max_length=300)
     summary_image = models.ImageField(upload_to='', default=None)
     body = RichTextField(blank=True, null=True)
