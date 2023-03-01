@@ -21,9 +21,12 @@
 
                             <header>
 
-                                <h1>Comments</h1>
+                                <h1>Answers ({{amount_comments}})</h1>
+                                <p>I invite you to discuss in the comments.</p>
 
-                                <p>Zachęcam do dyskusji w komentarzach, jednocześnie proszę o zachowanie kultury wypowiedzi.</p>
+                                {% if amount_comments == 0 %}
+                                    <p>You can be first to answer.</p>
+                                {% endif %}
 
                             </header>
 
@@ -57,21 +60,22 @@
                             {% endfor %}
 
                             <div class="comm-forum">
-
-                                <h1>New comment</h1>
+                                <br>
+                                <h2>Comment post</h2>
 
                                 <form method="POST">
-                                    {% csrf_token %}
 
                                     <div  class="form-group">
+                                        {% csrf_token %}
                                         {{ form.as_p }}
                                     </div>
 
-                                    <button type="submit">Send comment</button>
+                                    <p>Your comment will be added after approval by moderators.</p>
+
+                                    <p><input type="submit" value="Send comment"></p>
 
                                 </form>
                             </div>
-
                         </section>
                     </div>
                 </article>
@@ -79,9 +83,7 @@
         </div>
         <div class="east">
             <aside>
-
                 <nav>
-
                     <h2>Categories</h2>
 
                     {% for category in categories %}
@@ -108,8 +110,19 @@
                         </span>
                     {% endfor %}
 
-                </nav>
+                    <h2>Alphabetically</h2>
 
+                    {% for post in posts_alphabetically %}
+                        <span style="cursor:pointer">
+                            <div onclick="location.href='{% url 'post_detail' pk=post.pk %}';">
+                                <ul>
+                                    <li>{{ post.title }}</li>
+                                </ul>
+                            </div>
+                        </span>
+                    {% endfor %}
+
+                </nav>
             </aside>
         </div>
         <div style="clear: both;"></div>

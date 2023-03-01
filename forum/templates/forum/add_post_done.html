@@ -1,0 +1,25 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <article>
+            <section>
+                <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+                    <div class="container-log">
+                        <header>
+
+                            <h1>Post Added</h1>
+
+                        </header>
+
+                        <p>
+                            Post will be added after approval by moderators.
+                            <a href="{% url 'forum_post_list' %}">Back to forum</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+{% endblock %}

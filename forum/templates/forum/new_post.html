@@ -1,0 +1,33 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <main>
+        <article>
+            <section>
+                <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+                    <div class="container-register">
+                        <header>
+
+                            <center><h1>ADD NEW POST</h1></center>
+
+                        </header>
+
+                        <form method="post" action=".">
+
+                            {{ post_form|crispy }}
+                            {% csrf_token %}
+
+                            <div>
+                                <p>By added  post you accept the Terms of Use and acknowledge the Privacy Policy and Cookie Policy.</p>
+                            </div>
+
+                            <div style="text-align: center;"><input type="submit" value="Add post"></div>
+
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+{% endblock %}

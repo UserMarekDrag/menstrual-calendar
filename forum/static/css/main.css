@@ -605,13 +605,10 @@ input[type=submit]:hover
 {
 	width: 600px;
 	padding: 20px 50px;
-	/* margin-left: auto;
-	margin-right: auto; */
 	margin-top: 0px;
 	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	box-shadow: 3px 3px 30px 5px rgba(255, 254, 254, 0.9);
-	/* text-align: center; */
 }
 
 .banner-reg
@@ -627,6 +624,11 @@ input[type=submit]:hover
 }
 
 .banner-reg h1
+{
+	text-align: center;
+}
+
+.banner h1
 {
 	text-align: center;
 }

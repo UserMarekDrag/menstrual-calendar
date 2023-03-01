@@ -31,7 +31,7 @@ class ForumPost(models.Model):
 
 class ForumCommentPost(models.Model):
     post = models.ForeignKey('forum.ForumPost', on_delete=models.CASCADE, related_name='forum_comments')
-    author = models.CharField(max_length=200)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)

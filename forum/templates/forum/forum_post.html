@@ -1,7 +1,6 @@
 {% extends 'forum/base.html' %}
 {% load static %}
 {% block content %}
-{% load crispy_forms_tags %}
     <div class="container">
         <div class="west">
             <main>
@@ -30,7 +29,10 @@
 
                             <header>
 
-                                <h1>Answers</h1>
+                                <h1>Answers ({{amount_comments}})</h1>
+                                {% if amount_comments == 0 %}
+                                    <p>You can be first to answer.</p>
+                                {% endif %}
 
                             </header>
 
@@ -63,20 +65,37 @@
 
                             <div class="comm-forum">
 
-                                <h1>New comment</h1>
 
-                                <form method="POST">
+                                {% if request.user.is_authenticated %}
+                                    <h1>Your Answer</h1>
+                                    <form method="POST">
 
-                                    <div  class="form-group">
+                                        <div  class="form-group">
 
-                                        {% csrf_token %}
-                                        {{ comment_form.as_p }}
+                                            {% csrf_token %}
+                                            {{ comment_form.as_p }}
 
-                                    </div>
+                                        </div>
 
-                                    <button type="submit">Send comment</button>
+                                        <p>Your comment will be added after approval by moderators.</p>
 
-                                </form>
+                                        <p><input type="submit" value="Send comment"></p>
+
+                                    </form>
+
+
+
+                                {% else %}
+
+                                    <h2>Login to answer</h2>
+
+                                    <span style="cursor:pointer">
+                                        <div onclick="location.href='{% url 'login' %}';">
+                                            <p><input type="submit" value="Login"></p>
+                                        </div>
+                                    </span>
+                                {% endif %}
+
                             </div>
 
                         </section>
