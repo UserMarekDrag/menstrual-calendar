@@ -69,5 +69,6 @@ def new_post(request):
     return render(request, 'forum/new_post.html', {'post_form': post_form})
 
 
+@login_required
 def done_post(request):
     return render(request, 'forum/add_post_done.html', {'section': 'done_post'})

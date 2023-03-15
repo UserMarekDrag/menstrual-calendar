@@ -65,10 +65,8 @@
 
                                 <form method="POST">
 
-                                    <div  class="form-group">
-                                        {% csrf_token %}
-                                        {{ form.as_p }}
-                                    </div>
+                                    {% csrf_token %}
+                                    {{ form.as_p|safe }}
 
                                     <p>Your comment will be added after approval by moderators.</p>
 

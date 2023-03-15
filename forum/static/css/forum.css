@@ -603,7 +603,7 @@ input[type=submit]:hover
 
 .container-register
 {
-	width: 600px;
+	width: 710px;
 	padding: 20px 50px;
 	margin-top: 0px;
 	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
@@ -639,4 +639,15 @@ input[type=checkbox]
 	margin: 10px;
 	
 	letter-spacing: 5px;
+}
+
+.banner-new-post
+{
+    background-size: cover;
+    height: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

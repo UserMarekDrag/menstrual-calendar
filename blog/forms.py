@@ -4,9 +4,9 @@ from .models import CommentPost
 
 class CommentForm(forms.ModelForm):
     text = forms.CharField(widget=forms.Textarea(attrs={
-        'rows': '2',
+        'rows': '8',
     }))
 
     class Meta:
         model = CommentPost
-        fields = ('author', 'text', )
+        fields = ('text', 'author',)

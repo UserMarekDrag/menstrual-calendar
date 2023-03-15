@@ -1,11 +1,10 @@
 {% extends 'forum/base.html' %}
 {% load static %}
 {% block content %}
-{% load crispy_forms_tags %}
     <main>
         <article>
             <section>
-                <div class="banner" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+                <div class="banner-new-post" style="background-image: url('{% static 'img/main_7.jpg' %}');">
                     <div class="container-register">
                         <header>
 
@@ -15,8 +14,10 @@
 
                         <form method="post" action=".">
 
-                            {{ post_form|crispy }}
                             {% csrf_token %}
+
+                            {{ post_form.media }}
+                            {{ post_form.as_p }}
 
                             <div>
                                 <p>By added  post you accept the Terms of Use and acknowledge the Privacy Policy and Cookie Policy.</p>

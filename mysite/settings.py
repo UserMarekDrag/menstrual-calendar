@@ -160,3 +160,21 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'users.authentication.EmailAuthBackend',
 )
+
+# Configuration to RichTextField use in Forum APP
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            ['Undo', 'Redo',
+             '-', 'Bold', 'Italic', 'Underline',
+             '-', 'Link', 'Unlink', 'Anchor',
+             '-', 'Format',
+
+             '-', 'Maximize',
+
+             ],
+        ],
+        'width': '700px',
+        'toolbarCanCollapse': True,
+    },
+}

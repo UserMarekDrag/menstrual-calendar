@@ -73,6 +73,7 @@
                                         <div  class="form-group">
 
                                             {% csrf_token %}
+                                            {{ comment_form.media }}
                                             {{ comment_form.as_p }}
 
                                         </div>
@@ -82,8 +83,6 @@
                                         <p><input type="submit" value="Send comment"></p>
 
                                     </form>
-
-
 
                                 {% else %}
 
