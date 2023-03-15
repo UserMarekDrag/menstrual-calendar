@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('users/', include('users.urls')),
     path('forum/', include('forum.urls')),
+    path('calendar/', include('cycle_calendar.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,85 @@
+{% extends 'cycle_calendar/base.html' %}
+{% load static %}
+{% block content %}
+
+<main>
+
+    <div class="banner-cal-event" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+
+        <div class="cal-con-form">
+
+            <header>
+                {% if user_follow_auth %}
+                    <h2>Zobacz śledzone kalendarze.</h2>
+                        <br>
+                        <a class="botton-inf-cal" href="{% url 'follow_list' %}"> Followed list </a>
+                        <br>
+                {% endif %}
+                    <br>
+                    <p>Naciśnij przyciski poniżej i wygeneruj indywidualny kod.
+                    Prześlij go osobie która będzie mogła również śledzić twój kalendarz</p>
+
+            </header>
+            <form method="post">
+                {% csrf_token %}
+
+                {{form.unique_text}}
+
+                <input type="submit" value="ADD">
+            </form>
+
+            <h3>{{error_info}}</h3>
+
+        </div>
+    </div>
+
+  <div class="container-cal-bot" style="border-bottom: 6px solid #e9afc6;">
+
+      <div class="container-cal-bot-left">
+
+          <h3>Kiedy mam dni płodne?</h3>
+          <ul>
+              <li>Wzrost temperatury ciała. Regularny pomiar temperatury pozwoli ocenić Ci, kiedy faktycznie zbliżasz się do owulacji. W trakcie owulacji temperatura ciała osiąga około 37 stopni.</li>
+              <li>Śluz. W trakcie owulacji jego ilość znacznie się zwiększa, a konsystencja z rzadkiej zmienia się w gęstą wydzielinę przypominającą kurze białko.</li>
+              <li>Bóle brzucha. W czasie owulacji wielu kobietom towarzyszą silne bóle brzucha lub podbrzusza (w okolicach jajników).</li>
+              <li>Zmiany szyjki macicy. W czasie dni płodnych szyjka macicy jest miękka i pochylona ku przodowi.</li>
+          </ul>
+
+      </div>
+
+      <div class="container-cal-bot-right">
+
+          <h3>Co wpływa na przesunięcie się dni płodnych?</h3>
+          <p>Pamiętaj, że kalkulator owulacji i obserwacja własnego ciała, nie dają pełnej gwarancji dokładnego obliczenia dni płodnych. Jest bowiem szereg czynników, które powodują przesunięcie terminu owulacji i dni płodnych, wśród nich możemy m.in. wyróżnić:</p>
+          <ul>
+              <li>silny stres,</li>
+              <li>choroba w pierwszej fazie cyklu i przyjmowanie antybiotyków,</li>
+              <li>duży wysiłek fizyczny,</li>
+              <li>dieta i odchudzanie,</li>
+              <li>zmiany klimatu,</li>
+              <li>brak snu,</li>
+              <li>ogólne zmęczenie organizmu.</li>
+          </ul>
+
+      </div>
+
+      <div style="clear:both"></div>
+  </div>
+  <div class="container-cal-bot">
+      <div class="cal-article">
+          <h3>Jak korzystać z kalkulatora miesiączki?</h3>
+          <p>Kalendarzyk miesiączkowy online to wygodne rozwiązanie dla kobiet, które chcą monitorować swoje cykle menstruacyjne. Systematyczne uzupełnianie danych, czyli wpisywanie w kalendarz menstruacyjny dat rozpoczęcia kolejnych miesiączek, pozwala kalkulatorowi na coraz trafniejsze obliczenia. W ten sposób, wpisując kolejno daty miesiączki na cały rok, tworzymy kalendarz miesiączkowy na cały rok.</p>
+          <p>Pamiętaj przy tym, że kalkulator menstruacyjny nie powinien być stosowany jako forma zapobiegania nieplanowanej ciąży. Powód? Nawet najbardziej regularny cykl miesiączkowy mogą zaburzyć czynniki niezależne od kobiety, jak np. choroba, stres, wyjazd za granicę czy zwykłe przemęczenie.</p>
+
+          <h3>Jak działa kalendarzyk mniesiączkowy</h3>
+          <p>Na podstawie wprowadzonych przez Ciebie danych, otrzymasz prognozy dotyczące kolejnych miesiączek i zbliżających się dni płodnych.</p>
+
+          <h3>Jak obliczyć miesiączkę?</h3>
+          <p>Na miesiączkę warto się przygotować. Aby obliczyć, kiedy się pojawi należy uwzględnić średnią długość cyklu oraz datę rozpoczęcia i długość ostatniej miesiączki.</p>
+          <p>Okres, kiedy masz miesiączkę, wynosi od 4 do 7 dni, zaś średnia długość miesiączki to 4-5 dni. W tym czasie, pod wpływem zmian stężenia poziomu hormonów płciowych złuszcza się endometrium (nabłonek) macicy. Wtedy, a także przed miesiączką, możesz odczuwać jej charakterystyczne objawy, takie jak ból brzucha, wahania nastroju i apetytu, zwiększenie masy ciała, problemy z cerą.</p>
+          <p>By obliczyć, kiedy skończy się u Ciebie miesiączka, musisz oszacować, ile dni trwała przez ostatnie pół roku i wyciągnąć z tych obliczeń średnią. Jeśli np. przez ostatnie 6 miesięcy Twoja menstruacja trwała kolejno: 5, 6, 5, 7, 7 i 5 dni, średnia wyniesie niecałe 6 dni.</p>
+
+      </div>
+  </div>
+</main>
+{% endblock %}

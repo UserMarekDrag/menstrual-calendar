@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cycle_calendar.apps.CycleCalendarConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',

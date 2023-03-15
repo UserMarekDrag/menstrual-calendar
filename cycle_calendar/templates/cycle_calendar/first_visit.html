@@ -1,0 +1,64 @@
+{% extends 'cycle_calendar/base.html' %}
+{% load static %}
+{% block content %}
+<main>
+
+
+        <div class="banner-cal" style="background-image: url('{% static 'img/main_7.jpg' %}');">
+
+            <div class="cal-con-center">
+
+                <div class="cal-con-first-left">
+
+                    <div class="cal-add-button">
+                        <a class="botton-new-cal" href="{% url 'cycle_info_new' %}"> CREATE CALENDAR </a>
+                    </div>
+
+                    <h2>Utwórz swój kalendarz menstruacyjny</h2>
+                    <ul>
+                        <li>Wygodna personalizacja</li>
+                        <li>Online - zawsze pod ręką</li>
+                        <li>Poznaj lepiej siebie</li>
+                        <li>Wygodny w obsłudze</li>
+                        <li>Darmowy</li>
+                        <li>Możesz podzielić się nim z wybraną osobą</li>
+                    </ul>
+
+                </div>
+
+                <div class="cal-con-first-right">
+
+                    <div class="cal-add-button">
+                        <a class="botton-new-cal" href="{% url 'cycle_check_share' %}"> FOLLOW CALENDAR </a>
+                    </div>
+
+                    <h2>Dodaj do obserowowanych</h2>
+                    <ul>
+                        <li>Zaplanuj czas z drugą osobą w pełni świadomie</li>
+                        <li>Pozwala zrozumieć lepiej potrzeby drugiej osoby</li>
+                        <li>Wygodny w obsłudze</li>
+                        <li>Darmowy</li>
+                        <li>Online - zawsze pod ręką</li>
+                    </ul>
+
+                </div>
+
+                <div style="clear:both"></div>
+            </div>
+
+        </div>
+        <div class="container-cal">
+            <div class="cal-con-first-bottom">
+
+                <center><h1>Lorem ipsum dolor sit amet</h1></center>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sodales massa in risus dignissim, et venenatis arcu scelerisque. Praesent congue id orci pharetra placerat. Aliquam lorem risus, bibendum nec odio eget, interdum scelerisque justo. Ut vitae dui ac purus porta consequat. Sed sed dictum mi. Sed rhoncus a ligula eu aliquet. Curabitur quis quam a quam faucibus fringilla a id sem. Donec quis lobortis neque, ac vulputate nulla. In hac habitasse platea dictumst.</p>
+
+        <p> 1. Sed eu accumsan leo. Sed augue sapien, pulvinar in libero sed, elementum imperdiet ligula. Proin consequat felis ligula, nec aliquet ligula pharetra quis. Suspendisse fermentum aliquam sapien, semper sagittis diam auctor sit amet. Aenean ante lacus, posuere quis leo et, fringilla faucibus neque. Nulla sit amet ex quis leo aliquam vestibulum. Proin luctus velit leo, ut pellentesque odio lacinia in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam sed mi sed tortor pharetra efficitur. Duis et metus elit. Nullam commodo interdum urna quis aliquam. Sed at dui viverra, sollicitudin felis at, semper tellus.</p>
+
+        <p>2. Nulla vestibulum feugiat nisi, tempor luctus diam semper ac. Nam at ligula quam. Fusce vehicula luctus enim, ac posuere metus interdum ut. Donec ornare justo sit amet metus volutpat, ac sodales leo rutrum. Quisque velit augue, scelerisque nec mauris posuere, pellentesque laoreet nulla. Morbi feugiat massa molestie nisl consectetur mollis. Nullam suscipit, velit a varius fringilla, metus elit sodales urna, vel laoreet tortor leo vitae tellus. Integer rutrum enim nec condimentum dignissim.</p>
+
+            </div>
+        </div>
+</main>
+{% endblock %}
