@@ -722,3 +722,45 @@ input[type=checkbox]
 	padding: 5px;
 	width: 100%;
 }
+
+.container-dashboard
+{
+	width: 600px;
+	padding: 20px 50px;
+	margin-top: 30px;
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	box-shadow: 3px 3px 30px 5px rgba(255, 254, 254, 0.9);
+	text-align: center;
+}
+
+.container-dashboard h1
+{
+    margin: 10px;
+    font-size: 40px;
+}
+
+.container-dashboard h2
+{
+    margin: 12px;
+    padding: 5px;
+    font-size: 25px;
+    text-align: left;
+}
+
+.botton-dashboard
+{
+	background-color: #525350;
+	padding: 5px;
+	color: #efefef;
+	font-size: 20px;
+	text-decoration: none;
+	border-radius: 20px;
+	min-width: 200px;
+    margin-top: 10px;
+}
+
+.botton-dashboard:hover
+{
+	background-color: #5d5e5b;
+}

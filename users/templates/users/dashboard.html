@@ -1,7 +1,8 @@
 {% extends 'users/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="container-log">
+<main>
+    <div class="container-dashboard">
         <header>
 
             <h1>Hello, {{ user.username.capitalize}}!</h1>
@@ -13,7 +14,55 @@
                 <a href="{% url 'password_change' %}">change password</a>
                 .
             </p>
-
         </header>
     </div>
+    <div class="container-dashboard">
+
+        <h1>Forum</h1>
+
+        <h2>
+            You can add new post in forum
+            <a href="{% url 'new_post' %}" class="botton-dashboard">ADD POST</a>
+        </h2>
+        {% if post_forum %}
+        <h2>
+            See your last post
+            <a href="{% url 'forum_post_detail' post_forum.id %}" class="botton-dashboard">LAST POST</a>
+        </h2>
+        {% endif %}
+        {% if comment_forum %}
+        <h2>
+            See your last comment on forum
+            <a href="{% url 'forum_post_detail' comment_forum.post_id %}" class="botton-dashboard">POST</a>
+        </h2>
+        {% endif %}
+
+    </div>
+    <div class="container-dashboard">
+
+        <h1>Calendar</h1>
+        <h2>
+            Add your new cycle
+            <a class="botton-dashboard" href="{% url 'cycle_info_new' %}"> CREATE </a>
+        </h2>
+        <h2>
+            Add new traced calendar
+            <a class="botton-dashboard" href="{% url 'cycle_check_share' %}"> FOLLOW </a>
+        </h2>
+
+        {% if user_follow_auth %}
+            <h2>
+                See your followed list
+                <a class="botton-dashboard" href="{% url 'follow_list' %}"> LIST </a>
+            </h2>
+        {% endif %}
+
+        {% if user_share_auth %}
+            <h2>
+                See your share list
+                <a class="botton-dashboard" href="{% url 'share_list' %}"> LIST </a>
+            </h2>
+        {% endif %}
+    </div>
+</main>
 {% endblock %}
