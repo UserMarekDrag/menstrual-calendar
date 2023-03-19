@@ -15,14 +15,23 @@ def post_detail(request, pk):
     categories = Category.objects.all()
     amount_comments = CommentPost.objects.filter(post=post, approved_comment=True).count()
     posts_alphabetically = Post.objects.order_by('title')[:10]
+    user_auth = request.user.is_authenticated
+    error_author = ''
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
+            if user_auth:
+                comment.author = request.user
             comment.post = post
-            comment.save()
-            return redirect('post_detail', pk=post.pk)
+            if comment.author:
+                comment.save()
+                return redirect('post_detail', pk=post.pk)
+            else:
+                error_author = 'Error no Author typed'
+                form = CommentForm()
+
     else:
         form = CommentForm()
     return render(request, 'blog/post.html', {'post': post,
@@ -31,6 +40,8 @@ def post_detail(request, pk):
                                               'categories': categories,
                                               'amount_comments': amount_comments,
                                               'posts_alphabetically': posts_alphabetically,
+                                              'user_auth': user_auth,
+                                              'error_author': error_author,
                                               })
 
 

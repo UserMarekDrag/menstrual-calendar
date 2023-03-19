@@ -33,10 +33,10 @@ class Post(models.Model):
 
 class CommentPost(models.Model):
     post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
-    author = models.CharField(max_length=200)
-    text = models.TextField()
+    author = models.CharField(max_length=200, blank=True, null=True)
+    body = RichTextField(blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.text
+        return self.author

@@ -52,7 +52,7 @@
                                             </header>
 
                                             <hr class="detail-border">
-                                            <p>{{ comment.text|safe }}</p>
+                                            <p>{{ comment.body|safe }}</p>
 
                                         </article>
                                     </div>
@@ -66,13 +66,22 @@
                                 <form method="POST">
 
                                     {% csrf_token %}
-                                    {{ form.as_p|safe }}
+                                    <h2>Body:</h2>
+                                    {{ form.media }}
+                                    {{ form.body }}
+
+                                    {% if not user_auth %}
+                                        <h2>Author:</h2>
+                                        {{ form.author }}
+                                        <span style="color:red;">{{ error_author }}</span>
+                                    {% endif %}
 
                                     <p>Your comment will be added after approval by moderators.</p>
 
                                     <p><input type="submit" value="Send comment"></p>
 
                                 </form>
+
                             </div>
                         </section>
                     </div>
