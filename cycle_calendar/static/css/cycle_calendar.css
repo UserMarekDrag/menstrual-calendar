@@ -663,8 +663,6 @@ input[type=checkbox]
   margin: 15px;
 }
 
-
-/* App styles */
 .title {
   text-align: center;
   margin: 10px;
@@ -711,7 +709,6 @@ ul {
     margin-right: auto;
     width: 1150px;
     margin-bottom: 30px;
-    /* background-color: #fc2626; */
   }
 
   .container-cal-bot
@@ -728,20 +725,18 @@ ul {
     width: 700px;
     text-align: center;
     margin-left: auto;
-	  margin-right: auto;
-    /* background-color: #ffffff; */
+	margin-right: auto;
   }
 
   .cal-con-left
   {
     float: left;
-    /* background-color: #ffffff; */
     width: 450px;
     height: 100%;
     text-align: center;
     margin-left: auto;
-	  margin-right: auto;
-    margin-top: 40px;
+	margin-right: auto;
+    margin-top: 80px;
   }
 
   .calendar {
@@ -752,10 +747,6 @@ ul {
     float: left;
     margin-top: 60px;
   }
-
-  /* .calendar tr, .calendar td {
-    border: 1px solid black;
-  } */
 
   .calendar th
   {
@@ -769,7 +760,6 @@ ul {
     width: 30px;
     height: 30px;
     padding: 25px 5px 0px 5px;
-    /* border-radius: 40px; */
   }
 
   .month {
@@ -810,11 +800,6 @@ ul {
     background-color: #e7b9cf;
   }
 
-  /* .cal-td-no-event
-  {
-    background-color: #ad99a0;
-  } */
-
   .cal-legend
   {
     background-color: black;
@@ -832,90 +817,62 @@ ul {
   .legend .third { background-color: #ffffff; }
   .legend .fourth { background-color: #e7b9cf; }
 
-/*
-  .cal-td-basic
-  {
-    background-color: #c7c2c2;
-  } */
 
-  /* .date td
+  .calendar ul
   {
-    background-color: #e9afc6;
-  } */
-
-  .calendar ul {
     height: 90%;
     padding: 0px 5px 0px 0px;
   }
 
-  .left {
+  .left
+  {
     float: left;
   }
 
-  .right {
+  .right
+  {
     float: right;
   }
 
-  /* .btn {
-    outline: none;
-    color: black;
-    background-color: transparent;
-    box-shadow: 0 0 0 0;
-  } */
-
-
-  /* .form {
-    margin: auto;
-  } */
-
-  /* .form input, .form select, .form textarea {
-    border-radius: 5px;
-    border: 1px solid #17a2b8;
-    outline: none;
-    background: none;
-    padding: 5px;
-    width: 100%;
-  } */
-
 .cal-prev-button
 {
-	margin-top: 300px;
-  margin-bottom: 0px;
-  padding: 0px 0px 0px 30px;
-	float: left;
-	width: 40px;
-	text-align: left;
+    margin-top: 300px;
+    margin-bottom: 0px;
+    padding: 0px 0px 0px 30px;
+    float: left;
+    width: 40px;
+    text-align: left;
 }
 
 .cal-next-button
 {
-	margin-top: 300px;
-  margin-bottom: 0px;
-  padding: 0px 0px 0px 0px;
-	float: left;
-	width: 40px;
-	text-align: right;
+    margin-top: 300px;
+    margin-bottom: 0px;
+    padding: 0px 0px 0px 0px;
+    float: left;
+    width: 40px;
+    text-align: right;
 }
 
 .container-cal-bot-left
   {
     float: left;
-    width: 575px;
+    width: 475px;
     text-align: center;
     margin-left: auto;
-	  margin-right: auto;
+	margin-right: auto;
     margin-top: 30px;
     margin-bottom: 30px;
+    margin-left: 100px;
   }
 
   .container-cal-bot-right
   {
     float: left;
-    /* background-color: #ffffff; */
-    width: 575px;
+    width: 475px;
     text-align: center;
     margin-left: auto;
-	  margin-right: auto;
+    margin-right: auto;
     margin-top: 30px;
     margin-bottom: 30px;
   }
@@ -967,6 +924,15 @@ ul {
     text-align: left;
   }
 
+  .cal-info h1
+  {
+    display: inline-block;
+    text-align: left;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+  }
+
   .botton-inf-cal
   {
     background-color: #9e7697;
@@ -983,13 +949,9 @@ ul {
     background-color: #776464;
   }
 
-
-/* first page */
-
 .cal-con-first-left
 {
   float: left;
-  /* background-color: #a11c1c; */
   width: 600px;
   height: 450px;
   text-align: center;
@@ -1010,7 +972,6 @@ ul {
 .cal-con-first-right
 {
   float: left;
-  /* background-color: #b18c8c; */
   width: 594px;
   height: 450px;
   text-align: center;
@@ -1035,12 +996,10 @@ ul {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  /* background-color: #b18c8c; */
 }
 
 .cal-con-first-bottom
 {
-  /* background-color: #1f1cd3; */
   width: 70%;
   text-align: justify;
   margin-left: auto;
@@ -1051,7 +1010,7 @@ ul {
 
 .cal-add-button
 {
-	padding-top: 50px;
+  padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
   margin-bottom: 35px;
@@ -1059,11 +1018,11 @@ ul {
 
 .botton-new-cal
 {
-	background-color: #9e7697;
-	color: #ffffff;
-	font-size: 35px;
-	text-decoration: none;
-	border-radius: 12px;
+  background-color: #9e7697;
+  color: #ffffff;
+  font-size: 35px;
+  text-decoration: none;
+  border-radius: 12px;
   padding: 40px;
   margin-top: 20px;
   margin-bottom: 200px;
@@ -1096,48 +1055,63 @@ ul {
 	text-align: center;
 }
 
-/* event */
-
 .cal-con-form
 {
   text-align: center;
-  height: 300px;
+  height: 360px;
+}
+
+.cal-con-form h3
+{
+    margin: 0;
 }
 
 .cal-con-but
 {
-  padding-top: 70px;
+  padding-top: 50px;
   padding-bottom: 40px;
+}
+
+.cal-con-but h2
+{
+    margin: 0;
+}
+
+.cal-con-form ol li {
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  wight: 50px;
+  text-align: left;
+  margin-left: 110px;
 }
 
 #first_day
 {
-  background-color: #ffffff;
-  padding: 10px;
-  margin: 15px;
-
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 15px;
 }
 
 .banner-cal-event
 {
-  background-image: url("img/main_7.jpg");
-  background-size: cover;
-  height: 300px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner-cal
 {
-  background-image: url("img/main_7.jpg");
-  background-size: cover;
-  height: 600px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-image: url("img/main_7.jpg");
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input[type=submit-copy]
@@ -1153,7 +1127,7 @@ input[type=submit-copy]
 	cursor: pointer;
 	letter-spacing: 4px;
 	outline: none;
-  text-align: center;
+    text-align: center;
 }
 
 input[type=submit-copy]:focus
@@ -1170,16 +1144,33 @@ input[type=submit-copy]:hover
 
 input[type=text]
 {
-	width: 190px;
-	background-color: #efefef;
-	color: #666;
-	border: 2px solid #ddd;
-	border-radius: 5px;
+    width: 190px;
+    background-color: #efefef;
+    color: #666;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 13px 10px;
+    box-sizing: border-box;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.botton-delete
+{
+	background-color: #525350;
+	padding: 5px;
+	color: #efefef;
 	font-size: 20px;
-	padding: 13px 10px;
-	box-sizing: border-box;
-	outline: none;
-	margin-top: 10px;
-	margin-bottom: 10px;
-  text-align: center;
+	text-decoration: none;
+	border-radius: 20px;
+	min-width: 200px;
+    margin-top: 10px;
+}
+
+.botton-delete:hover
+{
+	background-color: #5d5e5b;
 }

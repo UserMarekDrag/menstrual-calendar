@@ -12,10 +12,10 @@ urlpatterns = [
     path('follow/share/list', views.share_list, name='share_list'),
     path('follow/share/list/<int:pk>', views.delete_user_from_share_list, name='delete_user_from_share_list'),
 
-    path('cycle-info/new/', views.cycle_info, name='cycle_info_new'),
-    path('cycle-info/edit', views.update_cycle_info, name='cycle_edit'),
+    path('new/cycle-info/', views.cycle_info, name='cycle_info_new'),
+    path('edit/cycle-info/', views.update_cycle_info, name='cycle_edit'),
 
-    path('cycle/new/', views.cycle_add_or_reset_date, name='cycle_new'),
-    path('cycle/share', views.share_unique_text, name='cycle_share'),
+    path('new/cycle/', views.cycle_add_or_reset_date, name='cycle_new'),
+    path('cycle/share/', views.share_unique_text, name='cycle_share'),
     path('cycle/share/check', views.check_unique_text, name='cycle_check_share'),
 ]

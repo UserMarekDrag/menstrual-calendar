@@ -558,7 +558,7 @@ def share_list(request):
 
 
 @login_required
-def delete_user_from_share_list(pk):
+def delete_user_from_share_list(request, pk):
     user_follower = UserShareCalendar.objects.filter(id=pk)
     user_follower.delete()
 
