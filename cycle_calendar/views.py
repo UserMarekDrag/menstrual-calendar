@@ -15,16 +15,23 @@ from .models import UserCalendarDate, UserCalendar, UserShareCalendar, UniqueTex
 
 
 def first_visit(request):
-    users_auth = UserCalendarDate.objects.filter(user=request.user)
-    user_auth = list(users_auth)
 
-    if not user_auth:
-        return render(request, 'cycle_calendar/first_visit.html', {'section': 'home',
-                                                                   'users_auth': users_auth,
-                                                                   'user_auth': user_auth,
-                                                                   })
+    if request.user.is_authenticated:
+
+        users_auth_calendar = UserCalendarDate.objects.filter(user=request.user).values()
+        user_auth_calendar = list(users_auth_calendar)
+
+        user_follower = UserShareCalendar.objects.filter(following=request.user).values()
+        user_follow_auth = list(user_follower)
+
+        if user_auth_calendar:
+            return redirect('calendar')
+
+        elif user_follow_auth:
+            return redirect('follow_list')
+
     else:
-        return redirect('calendar')
+        return render(request, 'cycle_calendar/first_visit.html', {'section': 'home', })
 
 
 class CalendarView(LoginRequiredMixin, generic.ListView):
@@ -197,8 +204,8 @@ def cycle_info(request):
         return redirect('cycle_new')
 
     return render(request, 'cycle_calendar/cycle_info.html', {'form': form,
-                                                                'user_auth': user_auth,
-                                                                })
+                                                              'user_auth': user_auth,
+                                                              })
 
 
 @login_required
@@ -280,8 +287,8 @@ def update_cycle_info(request):
             return redirect('calendar')
 
     return render(request, 'cycle_calendar/cycle_info.html', {'form': form,
-                                                                'user_auth': user_auth,
-                                                                })
+                                                              'user_auth': user_auth,
+                                                              })
 
 
 @login_required
@@ -370,7 +377,6 @@ def cycle_add_or_reset_date(request):
 
 def make_cycle(request, cycle_num, first_day, cycle_length, first_phase_length, second_phase_length,
                third_phase_length):
-
     # checking the number of expected cycles
     if not cycle_num == 12:
 

@@ -23,10 +23,13 @@
 						<br><br>
 
 						<a class="botton-inf-cal" href="{% url 'cycle_edit' %}"> MODIFY CYCLE </a>
-						<a class="botton-inf-cal" href="{% url 'cycle_share' %}"> SHARE CYCLE </a>
-						<br><br><br><br>
 						<a class="botton-inf-cal" href="{% url 'cycle_new' %}"> RESET CYCLE </a>
+						<br><br><br>
+						<a class="botton-inf-cal" href="{% url 'cycle_share' %}"> SHARE CYCLE</a>
 						<a class="botton-inf-cal" href="{% url 'share_list' %}"> SHARE LIST </a>
+						<br><br><br>
+						<a class="botton-inf-cal" href="{% url 'cycle_check_share' %}"> FOLLOW CYCLE </a>
+
 
 					{% else %}
 						<h1>Add your first cycle</h1>
