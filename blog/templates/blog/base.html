@@ -33,7 +33,7 @@
                         <li><a href="{% url 'home' %}">Calendar</a></li>
                         <li><a href="{% url 'post_list' %}">Blog</a></li>
                         <li><a href="{% url 'forum_post_list' %}">Forum</a></li>
-                        <li><a href="#">About me</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
 
                         {% if not request.user.is_authenticated %}
                             <li><a href="{% url 'login' %}">Login</a></li>
@@ -85,13 +85,16 @@
 
                 <div class="socialdivs">
 
-                    <div class="fb">
-                        <i class="icon-facebook"></i>
-                    </div>
-
-                    <div class="tw">
-                        <i class="icon-twitter"></i>
-                    </div>
+                    <a href="https://www.facebook.com/">
+                        <div class="fb">
+                            <i class="icon-facebook"></i>
+                        </div>
+                    </a>
+                    <a href="https://www.twitter.com/">
+                        <div class="tw">
+                            <i class="icon-twitter"></i>
+                        </div>
+                    </a>
 
                     <div style="clear:both"></div>
                 </div>

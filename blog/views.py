@@ -53,3 +53,7 @@ def category_detail(request, name):
     return render(request, 'blog/category_posts.html', {'categories': categories,
                                                         'posts': posts,
                                                         })
+
+
+def about(request):
+    return render(request, 'blog/about.html', {'section': 'home'})
