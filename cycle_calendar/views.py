@@ -476,6 +476,9 @@ def share_unique_text(request):
     if request.method == 'POST':
         form = UniqueTextShareForm(request.POST)
 
+        prev_unique_text = UniqueTextShare.objects.filter(user_sharing=request.user)
+        prev_unique_text.delete()
+
         post = form.save(commit=False)
         post.unique_text = generate_random_string()
         post.user_sharing = request.user
