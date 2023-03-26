@@ -38,9 +38,9 @@ if not IS_HEROKU:
 
 # Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
 if IS_HEROKU:
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ["mens-cal.herokuapp.com"]
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -100,16 +100,19 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 MAX_CONN_AGE = 600
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME'),
-        'HOST': config('DB_HOST'),
-        'PORT': '3306',
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
+DATABASES = {}
+
+if not IS_HEROKU:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': config('DB_NAME'),
+            'HOST': config('DB_HOST'),
+            'PORT': '3306',
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+        }
     }
-}
 
 if "CLEARDB_OLIVE_URL:" in os.environ:
     # Configure Django for DATABASE_URL environment variable.
