@@ -21,9 +21,15 @@ def main():
     execute_from_command_line(sys.argv)
 
 
+IS_HEROKU = "DYNO" in os.environ
+
+
 if __name__ == '__main__':
-    serve(
-        execute_from_command_line(['manage.py', 'runserver']),
-        host='0.0.0.0',
-        port=8000
-    )
+    if IS_HEROKU:
+        serve(
+            execute_from_command_line(['manage.py', 'runserver']),
+            host='0.0.0.0',
+            port=8000
+        )
+    else:
+        main()
