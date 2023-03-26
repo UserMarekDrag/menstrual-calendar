@@ -3,6 +3,9 @@
 import os
 import sys
 
+from django.core.management import execute_from_command_line
+from waitress import serve
+
 
 def main():
     """Run administrative tasks."""
@@ -19,4 +22,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    serve(
+        execute_from_command_line(['manage.py', 'runserver']),
+        host='0.0.0.0',
+        port=8000
+    )

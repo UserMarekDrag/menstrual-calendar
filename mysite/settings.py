@@ -33,9 +33,7 @@ if 'SECRET_KEY' in os.environ:
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# if not IS_HEROKU:
-#     DEBUG = True
-DEBUG = False
+DEBUG = True
 
 # Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
 if IS_HEROKU:
@@ -215,4 +213,5 @@ CKEDITOR_CONFIGS = {
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
-del DATABASES['default']['OPTIONS']['sslmode']
+if IS_HEROKU:
+    del DATABASES['default']['OPTIONS']['sslmode']
