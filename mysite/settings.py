@@ -111,7 +111,7 @@ DATABASES = {
     }
 }
 
-if "DATABASE_URL" in os.environ:
+if "CLEARDB_OLIVE_URL:" in os.environ:
     # Configure Django for DATABASE_URL environment variable.
     DATABASES["default"] = dj_database_url.config(
         conn_max_age=MAX_CONN_AGE, ssl_require=True)
