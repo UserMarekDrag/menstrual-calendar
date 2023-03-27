@@ -1,6 +1,14 @@
 # Project Description
 The project was created to develop programming skills. Calendar is a project using Django, MySQL, HTML, CSS, and Python technologies. The project contains four applications: blog, forum, user profile, and menstrual calendar.
 
+# Video
+Short film about the possibilities of the service on the YouTube platform ([link](https://youtu.be/gkDwtfeEwPI/)).
+
+# Deployment on Heroku
+The project has been successfully deployed on Heroku using MySQL database. The deployed version is currently in testing and the interface can be accessed at https://mens-cal.herokuapp.com. Heroku CLI was used for management and administration. Users can test the deployed version using the following credentials: 
+#### LOGIN: DEMO 
+#### PASSWORD: pcC3J7fBX3JU5JM
+
 # Blog
 On the blog, only administrators can add posts, and logged-in and non-logged-in users can add comments. RichTextField is used for the body of posts and comments.
 
@@ -25,8 +33,8 @@ The project uses the following technologies:
 # Planned Changes
 Planned changes for the project in the future include:
 
-1. Optimizing the display of the menstrual calendar
-2. Deployment through Heroku
+1. Optimizing the display of the menstrual calendar.
+2. Adding website responsiveness.
 3. Adding post and comment editing on the forum by users.
 
 # Cloning the repository

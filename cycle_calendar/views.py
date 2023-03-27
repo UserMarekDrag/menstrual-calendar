@@ -29,6 +29,8 @@ def first_visit(request):
 
         elif user_follow_auth:
             return redirect('follow_list')
+        else:
+            return render(request, 'cycle_calendar/first_visit.html', {'section': 'home', })
 
     else:
         return render(request, 'cycle_calendar/first_visit.html', {'section': 'home', })
@@ -524,10 +526,15 @@ def check_unique_text(request):
 
                 if request.POST['unique_text'] == str(unique_text):
                     users_connect = form_share.save(commit=False)
+
                     users_connect.following = request.user
                     users_connect.user = user_name
                     users_connect.save()
-                    return redirect('calendar_follow')
+
+                    unique_text_to_del = UniqueTextShare.objects.filter(unique_text=unique_text)
+                    unique_text_to_del.delete()
+
+                    return redirect('follow_list')
                 else:
                     error_info = 'The code is incorrect, try again.'
 
