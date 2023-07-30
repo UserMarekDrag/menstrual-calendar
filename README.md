@@ -32,6 +32,16 @@ The project uses the following technologies:
 - HTML - markup language for creating web pages
 - CSS - style sheet for describing the look of web pages
 
+# Database Schema
+
+![Database Schema](./assets/db_schema.png)
+
+To generate a new database schema visualization, you can use the `django-extensions`'s `graph_models` command:
+
+```bash
+python manage.py graph_models -a -o db_schema.png
+```
+
 # Planned Changes
 Planned changes for the project in the future include:
 
